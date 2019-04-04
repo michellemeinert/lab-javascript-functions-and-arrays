@@ -97,17 +97,19 @@ var wordsUnique = [
 ];
 
 function uniquifyArray(para1){
+  if(para1.length === 0){
+    return undefined;
+  }
   for (var x = 0; x < para1.length; x++) {
-    var word = para1[x];
     for (var w = 0; w < para1.length; w++) {
-      if (word === para1[w]) {
-        var indexWord = para1.indexOf(para1[w])
-        para1.slice(indexWord);
-        var slicedArray = para1;
+      if (para1[x] === para1[w] ){
+        if(x !== w){
+          para1.splice(w,1);
       }
+        }
     }
     }
-    return slicedArray;
+    return para1;
   }
 
 
